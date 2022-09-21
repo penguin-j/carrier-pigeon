@@ -3,10 +3,10 @@ require './src/infrastructure/gmail_helper'
 
 class SendEmailService
   def initialize(req)
-    @from_address = req['from_address']
-    @to_address = req['to_address']
-    @subject = req['subject']
-    @body = req['body']
+    @from_address = req[:from_address]
+    @to_address = req[:to_address]
+    @subject = req[:subject]
+    @body = req[:body]
   end
 
   def execute
