@@ -3,7 +3,7 @@ require './src/service/send_email_service'
 
 def execute(event:, context:)
   body = to_snake_case(event['body'])
-  SendEmailService.new.execute(body)
+  SendEmailService.new(body).execute
 end
 
 private def to_snake_case(body)
