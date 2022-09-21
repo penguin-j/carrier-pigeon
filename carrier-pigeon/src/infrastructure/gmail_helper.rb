@@ -1,7 +1,8 @@
 require 'mail'
 
 class GmailHelper
-  def initialize(to_address, subject, body)
+  def initialize(from_address, to_address, subject, body)
+    @from_address = from_address
     @to_address = to_address
     @subject = subject
     @body = body
@@ -9,7 +10,7 @@ class GmailHelper
 
   def send_email
     mail = Mail.new
-    mail.from    = AppConst::EMAIL_FROM_ADDRESS
+    mail.from    = @from_address
     mail.to      = @to_address
     mail.subject = @subject
     mail.body    = @body
